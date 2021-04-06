@@ -34,10 +34,19 @@
 
 play_games_adder <- function(df1,df2){
   if (ncol(df1) == 18 & ncol(df2) == 18){
+    t1 <- df1[nrow(df1),]
+    t2 <- df2[nrow(df2),]
+    df1<-df1[1:(nrow(df1)-1),]
+    df2<-df2[1:(nrow(df2)-1),]
     adder <- rbind(df1,df2)
+    team <- rbind(t1,t2)
     names(adder) <- c("Name","G","PTS","FG","FGA","FGP","TP","TPA","TPP","TWP","TWPA","TWPP","FT","FTA","FTP","ANDONE","AST","TOV")
+    names(team) <- c("Name","G","PTS","FG","FGA","FGP","TP","TPA","TPP","TWP","TWPA","TWPP","FT","FTA","FTP","ANDONE","AST","TOV")
     adder <- aggregate(cbind(adder$G,adder$PTS,adder$FG,adder$FGA,adder$TP,adder$TPA,adder$TWP,adder$TWPA,adder$FT,adder$FTA,adder$ANDONE,
                              adder$AST,adder$TOV), by=list(Name=adder$Name), FUN=sum)
+    team <- aggregate(cbind(team$G,team$PTS,team$FG,team$FGA,team$TP,team$TPA,team$TWP,team$TWPA,team$FT,team$FTA,team$ANDONE,
+                             team$AST,team$TOV), by=list(Name=team$Name), FUN=sum)
+    adder <- rbind(adder,team)
     fgp <- round(adder[4] / adder[5],3)
     tp  <- round(adder[6] / adder[7],3)
     twp <- round(adder[8] / adder[9],3)

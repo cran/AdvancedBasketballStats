@@ -105,9 +105,9 @@ lineups_data_adjustment <- function(df1){
     data_adjustment <- aggregate(cbind(df1$MP,df1$FG,df1$oFG,df1$FGA,df1$oFGA,df1$TP,df1$oTP,df1$TPA,df1$oTPA,df1$TWP,df1$oTWP,df1$TWPA,df1$oTWPA,df1$FT,df1$oFT,df1$FTA,df1$oFTA,df1$ORB,df1$oORB,
                                        df1$DRB,df1$oDRB,df1$AST,df1$oAST,df1$STL,df1$oSTL,df1$BLK,df1$oBLK,df1$TOV,df1$oTOV,df1$PPF,df1$oPF,df1$P,df1$M),
                                  by=list(PG=df1$PG,SG=df1$SG,SF=df1$SF,PF=df1$PF,C=df1$C), FUN=sum)
-    TOTR <- sample(c(round(df1[23]+df1[25],3)), size = 1, replace = TRUE)
-    oTOTR <- sample(c(round(df1[24]+df1[26],3)), size = 1, replace = TRUE)
-    PM <- sample(c(round(df1[37]-df1[38],3)), size = 1, replace = TRUE)
+    TOTR <- sample(c(round(data_adjustment[23]+data_adjustment[25],3)), size = 1, replace = TRUE)
+    oTOTR <- sample(c(round(data_adjustment[24]+data_adjustment[26],3)), size = 1, replace = TRUE)
+    PM <- sample(c(round(data_adjustment[37]-data_adjustment[38],3)), size = 1, replace = TRUE)
     data_adjustment <- cbind(data_adjustment,TOTR,oTOTR,PM)
     data_adjustment <- subset (data_adjustment, select=c(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,39,40,27,28,29,30,31,32,33,34,35,36,37,38,41))
     names(data_adjustment) <- c("PG","SG","SF","PF","C","MP","FG","oFG","FGA","oFGA","3P","o3P","3PA","o3PA","2P","o2P","2PA","o2PA","FT","oFT","FTA","oFTA",

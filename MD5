@@ -1,10 +1,10 @@
-b4c881044110709825f4f3b2e3fd145b *DESCRIPTION
+fd087f83050a052653732318dee34604 *DESCRIPTION
 ad1b3a89c6868555103bccad490f1926 *NAMESPACE
 220b728eceaa1f963cf425916998fbd0 *R/individuals_advance_stats.R
 1c114bf001a6b77920b30a3b79f24a45 *R/individuals_data_adjustment.R
 6ecd1749cceb585d3ab29641c4a17669 *R/individuals_defensive_actual_floor_stats.R
 478846177ef6afbe52072074b3807df4 *R/individuals_defensive_estimated_floor_stats.R
-72b6ed92114210e80736c80ae0a7afde *R/individuals_games_adder.R
+b795b145a2233998353e5bf7e407e8ef *R/individuals_games_adder.R
 672ffb2c6f37fcd3fb697577acf9e710 *R/individuals_ofensive_floor_stats.R
 d3fc2765e172700bdb060e8fb95b4665 *R/individuals_stats_per_game.R
 dbcf9b00385a86731bba9d1b11518415 *R/individuals_stats_per_minutes.R
@@ -12,7 +12,7 @@ dbcf9b00385a86731bba9d1b11518415 *R/individuals_stats_per_minutes.R
 98807259faa79cc0e13c9341f869cfb2 *R/lineups_advance_stats.R
 23dca235b57e18aa397f6e205bf7b4e7 *R/lineups_backcourt.R
 2ed912a14634c5117e6141fb454d98c5 *R/lineups_comparator_stats.R
-d58fa4b7a63f2d402f2337d3c897eca4 *R/lineups_data_adjustment.R
+08f171bc90603f857f5fca7ab7802527 *R/lineups_data_adjustment.R
 f035d8b4ee60b50abe0caa1f151e0e1e *R/lineups_games_adder.R
 f5ac2b9b43e1b5867efafc689fc335b9 *R/lineups_paint.R
 2212adfac29ee0e55d5c265a4d058d9f *R/lineups_players.R
@@ -21,7 +21,7 @@ d94b0bffff27317f6d4e19c9344f9632 *R/lineups_separator.R
 e2bf3c6ffe963b2764d4d46bb6255b70 *R/lineups_stats_per_possesion.R
 2a1fc51dcff62b3c054c11a4eb0ea63e *R/play_advance_stats.R
 725b30bfdf7a59f5fdd54b0fc298b82a *R/play_data_adjustment.R
-0624da80eed9ca99d928a50052668855 *R/play_games_adder.R
+d975e2add909660d0db8c92dd2c81daa *R/play_games_adder.R
 4ff131bb7ce08632b9de474625ee5a18 *R/play_stats_per_game.R
 4c72d03420816a9e4fc09a6e0cc55b6b *R/play_stats_per_possesion.R
 4c1578e32740040188d970f24628a2f4 *R/play_team_stats.R
@@ -33,7 +33,7 @@ a0ce0fce0757b62028caa8f0830983ca *R/team_stats_per_possesion.R
 755c9968ef8a650bc266239a9ab5bf4f *build/vignette.rds
 90b6b449769b00de9cd23b0af9451fd3 *inst/doc/BasketballAdvancedStats.R
 d459edfc95aaed91afe954fca15653c3 *inst/doc/BasketballAdvancedStats.Rmd
-85cc197a57600641167c3e2a3f0b6ee9 *inst/doc/BasketballAdvancedStats.html
+267723bb43061035d9af37a7a20ad19a *inst/doc/BasketballAdvancedStats.html
 f7ef8031aff7d34ea368c00854d94eb5 *man/individuals_advance_stats.Rd
 9d922d9e1911ced56211d61a69b00dfd *man/individuals_data_adjustment.Rd
 95faf0583de2b76f6ad8ac84787fe942 *man/individuals_defensive_actual_floor_stats.Rd
@@ -65,3 +65,4 @@ d326dbc8eb597ac5b44e1696abc9a93f *man/team_advanced_stats.Rd
 7e56becf7a607e07ad8a21a51c58e5e5 *man/team_stats_per_minutes.Rd
 cb6faa35ad833c2947d16d2fa3c35f54 *man/team_stats_per_possesion.Rd
 d459edfc95aaed91afe954fca15653c3 *vignettes/BasketballAdvancedStats.Rmd
+85cc197a57600641167c3e2a3f0b6ee9 *vignettes/pandoc1ad4379a6e6.html

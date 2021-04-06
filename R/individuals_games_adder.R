@@ -32,12 +32,24 @@
 
 individuals_games_adder <- function(df1,df2){
   if(ncol(df1) == 26 & ncol(df2) == 26){
+    t1 <- df1[nrow(df1),]
+    t2 <- df2[nrow(df2),]
+    df1<-df1[1:(nrow(df1)-1),]
+    df2<-df2[1:(nrow(df2)-1),]
     adder <- rbind(df1,df2)
+    team <- rbind(t1,t2)
+
     names(adder) <- c("Name","G","GS","MP","FG","FGA","FG%","TP","TPA","3P%","TWP","TWPA","2P%","FT","FTA","FT%",
                         "ORB","DRB","TRB","AST","STL","BLK","TOV","PF","P","PM")
+    names(team) <- c("Name","G","GS","MP","FG","FGA","FG%","TP","TPA","3P%","TWP","TWPA","2P%","FT","FTA","FT%",
+                      "ORB","DRB","TRB","AST","STL","BLK","TOV","PF","P","PM")
     adder <- aggregate(cbind(adder$G,adder$GS,adder$MP,adder$FG,adder$FGA,adder$TP,adder$TPA,adder$TWP,adder$TWPA,adder$FT,adder$FTA,adder$ORB,
                              adder$DRB,adder$TRB,adder$AST,adder$STL,adder$BLK,adder$TOV,adder$PF,adder$P,adder$PM),
                        by=list(Name=adder$Name), FUN=sum)
+    team <- aggregate(cbind(team$G,team$GS,team$MP,team$FG,team$FGA,team$TP,team$TPA,team$TWP,team$TWPA,team$FT,team$FTA,team$ORB,
+                             team$DRB,team$TRB,team$AST,team$STL,team$BLK,team$TOV,team$PF,team$P,team$PM),
+                       by=list(Name=team$Name), FUN=sum)
+    adder <- rbind(adder,team)
     PFG<-sample(c(round(adder[5]/adder[6],3)), size = 1, replace = TRUE)
     P3P<-sample(c(round(adder[7]/adder[8],3)), size = 1, replace = TRUE)
     P2P<-sample(c(round(adder[9]/adder[10],3)), size = 1, replace = TRUE)
@@ -48,9 +60,17 @@ individuals_games_adder <- function(df1,df2){
     names(adder) <- c("Name","G","GS","MP","FG","FGA","FG%","3P","3PA","3P%","2P","2PA","2P%","FT","FTA","FT%",
                       "ORB","DRB","TRB","AST","STL","BLK","TOV","PF","PTS","+/-")
   }else if (ncol(df1) == 12 & ncol(df2) == 12){
+    t1 <- df1[nrow(df1),]
+    t2 <- df2[nrow(df2),]
+    df1<-df1[1:(nrow(df1)-1),]
+    df2<-df2[1:(nrow(df2)-1),]
     adder <- rbind(df1,df2)
+    team <- rbind(t1,t2)
     names(adder) <- c("Name","MP","DREB","FM","BLK","TOTALFM","FTO","STL","TOTALFTO","FFTA","DFGM","DFTM")
+    names(team) <- c("Name","MP","DREB","FM","BLK","TOTALFM","FTO","STL","TOTALFTO","FFTA","DFGM","DFTM")
     adder <- aggregate(cbind(adder$MP,adder$DREB,adder$FM,adder$BLK,adder$TOTALFM,adder$FTO,adder$STL,adder$TOTALFTO,adder$FFTA,adder$DFGM,adder$DFTM), by=list(Name=adder$Name), FUN=sum)
+    team <- aggregate(cbind(team$MP,team$DREB,team$FM,team$BLK,team$TOTALFM,team$FTO,team$STL,team$TOTALFTO,team$FFTA,team$DFGM,team$DFTM), by=list(Name=team$Name), FUN=sum)
+    adder <- rbind(adder,team)
     names(adder) <- c("Name","MP","DREB","FM","BLK","TOTALFM","FTO","STL","TOTALFTO","FFTA","DFGM","DFTM")
     adder[is.na(adder)] <- 0
   }
